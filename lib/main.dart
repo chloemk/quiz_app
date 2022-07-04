@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
                 primary: Colors.white60, // background
                 onPrimary: Colors.black, // foreground
               ),
-              onPressed: null,
+              onPressed: () => answerQuestion(),
               child: const Text('Answer 1'),
             ),
             ElevatedButton(
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
                 primary: Colors.white60,
                 onPrimary: Colors.black,
               ),
-              onPressed: null,
+              onPressed: answerQuestion,
               child: const Text('Answer 2'),
             ),
             ElevatedButton(
@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
                 primary: Colors.white60,
                 onPrimary: Colors.black,
               ),
-              onPressed: null,
+              onPressed: answerQuestion,
               child: const Text('Answer 3'),
             ),
           ],

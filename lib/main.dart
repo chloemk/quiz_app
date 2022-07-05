@@ -46,6 +46,13 @@ class _MyAppState extends State<MyApp> {
   var _questionIndex = 0;
   int _totalScore = 0;
 
+  void _resetQuiz() {
+    setState(() {
+      _questionIndex = 0;
+      _totalScore = 0;
+    });
+  }
+
   void _answerQuestion(int score) {
     _totalScore += score;
 
@@ -66,12 +73,12 @@ class _MyAppState extends State<MyApp> {
           appBar: AppBar(
             title: const Text('Quiz App'),
           ),
-          body: _questionIndex < _questionIndex
+          body: _questionIndex < _questions.length
               ? Quiz(
                   questions: _questions,
                   questionIndex: _questionIndex,
                   answerQuestion: _answerQuestion)
-              : Result(_totalScore)),
+              : Result(_resetQuiz, _totalScore)),
     );
   }
 }
